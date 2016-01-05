@@ -1,0 +1,12 @@
+depends/boost/boost_*/
+depends/curl/curl-*/
+depends/libcec/libcec-*/
+depends/libogg/libogg-*/
+depends/libsamplerate/libsamplerate-*/
+depends/libvorbis/libvorbis-*/
+depends/openssl/openssl-*/
+depends/shairplay/shairplay-*/
+depends/sqlite3/sqlite-*/
+depends/zlib/zlib-*/
+plex-depends/
+plex-depends.7z

@@ -1,0 +1,10 @@
+zlib
+openssl
+curl
+sqlite3
+libcec
+libogg
+libvorbis
+libsamplerate
+shairplay
+boost
