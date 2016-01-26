@@ -16,12 +16,13 @@ cd %DEPEND_PACKAGE%
 rem TODO patch MakefileBuild.vc adding /DUSE_SYNC_DNS
 rem %PATHC% -p1 < ..\use-sync-dns.patch
 
+copy /V /Y ..\MakefileBuild.vc winbuild\
 cd winbuild
-nmake /f Makefile.vc mode=dll WITH_DEVEL=%BUILD_PATH% WITH_SSL=dll WITH_ZLIB=dll GEN_PDB=yes DEBUG=no ENABLE_SSPI=no ENABLE_SPNEGO=no
+nmake /f Makefile.vc mode=dll VC=11 WITH_DEVEL=%BUILD_PATH% WITH_SSL=dll WITH_ZLIB=dll ENABLE_SSPI=no GEN_PDB=yes DEBUG=no MACHINE=x86
 
 ping 127.0.0.1 -n 2 -w 1000 > nul
 
-cd ..\builds\libcurl-vc-x86-release-dll-ssl-dll-zlib-dll-ipv6
+cd ..\builds\libcurl-vc11-x86-release-dll-ssl-dll-zlib-dll-ipv6
 copy /V /Y bin\libcurl.dll %BUILD_PATH%\bin\
 copy /V /Y lib\libcurl.pdb %BUILD_PATH%\bin\
 xcopy include\curl %BUILD_PATH%\include\curl /I /E /V /Y
