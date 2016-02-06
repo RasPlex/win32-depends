@@ -8,3 +8,4 @@ libvorbis
 libsamplerate
 shairplay
 boost
+tinyxml
