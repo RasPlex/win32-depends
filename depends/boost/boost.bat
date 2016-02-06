@@ -12,8 +12,8 @@ del /F /Q %DEPEND_PACKAGE%.7z
 cd %DEPEND_PACKAGE%
 
 call bootstrap.bat
-b2 toolset=msvc-11.0 variant=debug link=static --with-thread --with-date_time --with-regex --with-random
-b2 toolset=msvc-11.0 variant=release link=static --with-thread --with-date_time --with-regex --with-random
+b2 toolset=msvc-%VS%.0 variant=debug link=static --with-thread --with-date_time --with-regex --with-random
+b2 toolset=msvc-%VS%.0 variant=release link=static --with-thread --with-date_time --with-regex --with-random
 
 ping 127.0.0.1 -n 2 -w 1000 > nul
 

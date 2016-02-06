@@ -14,6 +14,14 @@ if "%WindowsSdkDir%" == "" (
   call "%VS110COMNTOOLS%vsvars32.bat"
 )
 
+set VS=%VisualStudioVersion:~0,2%
+if "%VS%" == "11" (
+  set VSYEAR=2012
+)
+if "%VS%" == "12" (
+  set VSYEAR=2013
+)
+
 set WGET=%CD%\tools\wget
 set PATCH=%CD%\tools\patch
 set ZIP=%CD%\tools\7z\7za
@@ -27,4 +35,4 @@ FOR /F "eol=; tokens=1" %%f IN (depends\depends.txt) DO (
 
 cd /D %~dp0
 
-tools\7z\7za.exe a plex-depends.7z plex-depends\
+tools\7z\7za.exe a plex-depends-v%VS%0.7z plex-depends\

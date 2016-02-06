@@ -13,15 +13,15 @@ del /F /Q %DEPEND_PACKAGE%.tar.xz
 del /F /Q %DEPEND_PACKAGE%.tar
 cd %DEPEND_PACKAGE%
 
-xcopy ..\VS2012 win32\VS2012 /I /E /V /Y
-msbuild win32\VS2012\libogg_dynamic.sln /t:Build /p:Configuration=Release;Platform=Win32
+xcopy ..\VS%VSYEAR% win32\VS%VSYEAR% /I /E /V /Y
+msbuild win32\VS%VSYEAR%\libogg_dynamic.sln /t:Build /p:Configuration=Release;Platform=Win32
 
 ping 127.0.0.1 -n 2 -w 1000 > nul
 
-copy /V /Y win32\VS2012\Win32\Release\%DEPEND_NAME%.dll %BUILD_PATH%\bin\
-copy /V /Y win32\VS2012\Win32\Release\%DEPEND_NAME%.pdb %BUILD_PATH%\bin\
+copy /V /Y win32\VS%VSYEAR%\Win32\Release\%DEPEND_NAME%.dll %BUILD_PATH%\bin\
+copy /V /Y win32\VS%VSYEAR%\Win32\Release\%DEPEND_NAME%.pdb %BUILD_PATH%\bin\
 mkdir %BUILD_PATH%\include\ogg\
 copy /V /Y include\ogg\ogg.h %BUILD_PATH%\include\ogg\
 copy /V /Y include\ogg\os_types.h %BUILD_PATH%\include\ogg\
-copy /V /Y win32\VS2012\Win32\Release\%DEPEND_NAME%.lib %BUILD_PATH%\lib\
-copy /V /Y win32\VS2012\Win32\Release\%DEPEND_NAME%.exp %BUILD_PATH%\lib\
+copy /V /Y win32\VS%VSYEAR%\Win32\Release\%DEPEND_NAME%.lib %BUILD_PATH%\lib\
+copy /V /Y win32\VS%VSYEAR%\Win32\Release\%DEPEND_NAME%.exp %BUILD_PATH%\lib\

@@ -10,3 +10,4 @@ depends/sqlite3/sqlite-*/
 depends/zlib/zlib-*/
 plex-depends/
 plex-depends.7z
+plex-depends-*.7z

@@ -12,7 +12,7 @@ del /F /Q %DEPEND_PACKAGE%.zip
 cd %DEPEND_NAME%-%DEPEND_PACKAGE%
 
 copy /V /Y ..\libcec.rc project\libcec\
-copy /V /Y ..\libcec.vcxproj project\libcec\
+copy /V /Y ..\libcec-v%VS%0.vcxproj project\libcec\libcec.vcxproj
 msbuild project\libcec.sln /p:Configuration=Release;Platform=x86 /t:libcec
 
 ping 127.0.0.1 -n 2 -w 1000 > nul

@@ -13,7 +13,7 @@ del /F /Q %DEPEND_PACKAGE%.tar.gz
 del /F /Q %DEPEND_PACKAGE%.tar
 cd %DEPEND_PACKAGE%
 
-copy /V /Y ..\Makefile.msvc Win32\
+copy /V /Y ..\Makefile-v%VS%0.msvc Win32\Makefile.msvc
 
 nmake /f Win32\Makefile.msvc libsamplerate-0.dll
 
