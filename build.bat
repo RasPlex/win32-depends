@@ -14,6 +14,10 @@ if "%WindowsSdkDir%" == "" (
   call "%VS110COMNTOOLS%vsvars32.bat"
 )
 
+if "%VisualStudioVersion%" == "" (
+  set VisualStudioVersion=11.0
+)
+
 set VS=%VisualStudioVersion:~0,2%
 if "%VS%" == "11" (
   set VSYEAR=2012
