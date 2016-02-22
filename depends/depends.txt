@@ -9,3 +9,4 @@ libsamplerate
 shairplay
 boost
 tinyxml
+breakpad
