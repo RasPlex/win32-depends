@@ -1,7 +1,8 @@
 SETLOCAL
 
 set DEPEND_NAME=breakpad
-set DEPEND_VERSION=chrome_49
+rem set DEPEND_VERSION=chrome_49
+set DEPEND_VERSION=84d37160a74e0ce627a6fedf3395a7480450f4c1
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=https://chromium.googlesource.com/breakpad/breakpad/+archive/%DEPEND_VERSION%.tar.gz
 
