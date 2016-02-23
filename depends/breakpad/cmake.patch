@@ -1,19 +1,19 @@
-From 8f501d51df90ac1e9c58dc26fec042db4531f3db Mon Sep 17 00:00:00 2001
+From 2c4100e68fe028a0366e469bd1efd6dd183bc11d Mon Sep 17 00:00:00 2001
 From: Jonas Karlman <jonas@kwiboo.se>
-Date: Fri, 19 Feb 2016 12:33:58 +0100
-Subject: [PATCH] CMake
+Date: Mon, 22 Feb 2016 20:46:17 +0100
+Subject: [PATCH] CMake from plexinc
 
 ---
- CMakeLists.txt                            | 69 ++++++++++++++++++++++++++
- src/client/CMakeLists.txt                 | 81 +++++++++++++++++++++++++++++++
- src/common/CMakeLists.txt                 | 71 +++++++++++++++++++++++++++
- src/config.h.cmake.in                     | 49 +++++++++++++++++++
+ CMakeLists.txt                            | 69 +++++++++++++++++++++++++
+ src/client/CMakeLists.txt                 | 83 +++++++++++++++++++++++++++++++
+ src/common/CMakeLists.txt                 | 71 ++++++++++++++++++++++++++
+ src/config.h.cmake.in                     | 49 ++++++++++++++++++
  src/google_breakpad/common/CMakeLists.txt | 20 ++++++++
  src/third_party/CMakeLists.txt            |  2 +
  src/tools/linux/CMakeLists.txt            |  4 ++
  src/tools/mac/CMakeLists.txt              |  6 +++
  src/tools/windows/CMakeLists.txt          | 12 +++++
- 9 files changed, 314 insertions(+)
+ 9 files changed, 316 insertions(+)
  create mode 100644 CMakeLists.txt
  create mode 100644 src/client/CMakeLists.txt
  create mode 100644 src/common/CMakeLists.txt
@@ -26,14 +26,14 @@ Subject: [PATCH] CMake
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 new file mode 100644
-index 0000000..a5db0ad
+index 0000000..4bf335d
 --- /dev/null
 +++ b/CMakeLists.txt
 @@ -0,0 +1,69 @@
 +Project(breakpad)
 +cmake_minimum_required(VERSION 2.8)
 +
-+# find some include files¨
++# find some include files
 +if(UNIX)
 +	include(CheckIncludeFiles)
 +	check_include_files(a.out.h HAVE_A_OUT_H)
@@ -50,15 +50,15 @@ index 0000000..a5db0ad
 +
 +	# check for threads
 +	find_package(Threads)
-+	
++
 +	configure_file(src/config.h.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
-+	
++
 +	include(CheckSymbolExists)
 +	check_symbol_exists(ULLONG_MAX "limits.h" HAVE_ULLONG_MAX)
 +	if(NOT HAVE_ULLONG_MAX)
 +	add_definitions(-DULLONG_MAX=18446744073709551615ULL)
 +	endif(NOT HAVE_ULLONG_MAX)
-+	
++
 +	add_definitions(-DHAVE_CONFIG_H)
 +endif(UNIX)
 +
@@ -102,7 +102,7 @@ index 0000000..a5db0ad
 \ No newline at end of file
 diff --git a/src/client/CMakeLists.txt b/src/client/CMakeLists.txt
 new file mode 100644
-index 0000000..6f8b7d1
+index 0000000..229a7d8
 --- /dev/null
 +++ b/src/client/CMakeLists.txt
 @@ -0,0 +1,83 @@
@@ -139,7 +139,7 @@ index 0000000..6f8b7d1
 +  )
 +  set_target_properties(breakpad_client PROPERTIES COMPILE_PDB_NAME "breakpad_client")
 +  install(FILES "${PROJECT_BINARY_DIR}/src/client/breakpad_client.pdb" DESTINATION lib)
-+  
++
 +  file(GLOB HEADERS windows/handler/*h)
 +  install(FILES ${HEADERS} DESTINATION include/breakpad/client/windows/handler)
 +
@@ -148,29 +148,29 @@ index 0000000..6f8b7d1
 +
 +  file(GLOB HEADERS windows/common/*h)
 +  install(FILES ${HEADERS} DESTINATION include/breakpad/client/windows/common)
-+  
++
 +  file(GLOB HEADERS windows/sender/*h)
 +  install(FILES ${HEADERS} DESTINATION include/breakpad/client/windows/sender)
 +elseif(UNIX)
 +  add_library(breakpad_client STATIC
-+    linux/crash_generation/crash_generation_client.cc 
-+    linux/crash_generation/crash_generation_server.cc 
-+    linux/handler/exception_handler.cc 
-+    linux/handler/minidump_descriptor.cc 
-+    linux/log/log.cc 
-+    linux/minidump_writer/linux_dumper.cc 
-+    linux/minidump_writer/linux_ptrace_dumper.cc 
-+    linux/minidump_writer/minidump_writer.cc 
++    linux/crash_generation/crash_generation_client.cc
++    linux/crash_generation/crash_generation_server.cc
++    linux/handler/exception_handler.cc
++    linux/handler/minidump_descriptor.cc
++    linux/log/log.cc
++    linux/minidump_writer/linux_dumper.cc
++    linux/minidump_writer/linux_ptrace_dumper.cc
++    linux/minidump_writer/minidump_writer.cc
 +    ${COMMON_SRC}
 +
-+    ${PROJECT_SOURCE_DIR}/src/common/convert_UTF.c 
-+    ${PROJECT_SOURCE_DIR}/src/common/md5.cc 
-+    ${PROJECT_SOURCE_DIR}/src/common/string_conversion.cc 
-+    ${PROJECT_SOURCE_DIR}/src/common/linux/elfutils.cc 
-+    ${PROJECT_SOURCE_DIR}/src/common/linux/file_id.cc 
-+    ${PROJECT_SOURCE_DIR}/src/common/linux/guid_creator.cc 
-+    ${PROJECT_SOURCE_DIR}/src/common/linux/linux_libc_support.cc 
-+    ${PROJECT_SOURCE_DIR}/src/common/linux/memory_mapped_file.cc 
++    ${PROJECT_SOURCE_DIR}/src/common/convert_UTF.c
++    ${PROJECT_SOURCE_DIR}/src/common/md5.cc
++    ${PROJECT_SOURCE_DIR}/src/common/string_conversion.cc
++    ${PROJECT_SOURCE_DIR}/src/common/linux/elfutils.cc
++    ${PROJECT_SOURCE_DIR}/src/common/linux/file_id.cc
++    ${PROJECT_SOURCE_DIR}/src/common/linux/guid_creator.cc
++    ${PROJECT_SOURCE_DIR}/src/common/linux/linux_libc_support.cc
++    ${PROJECT_SOURCE_DIR}/src/common/linux/memory_mapped_file.cc
 +    ${PROJECT_SOURCE_DIR}/src/common/linux/safe_readlink.cc
 +  )
 +  file(GLOB HEADERS linux/handler/*h)
@@ -191,24 +191,24 @@ index 0000000..6f8b7d1
 +
 diff --git a/src/common/CMakeLists.txt b/src/common/CMakeLists.txt
 new file mode 100644
-index 0000000..56b23c7
+index 0000000..c69f5b0
 --- /dev/null
 +++ b/src/common/CMakeLists.txt
 @@ -0,0 +1,71 @@
 +if(UNIX)
 +  set(common_SRC
-+    dwarf_cfi_to_module.cc 
-+    dwarf_cu_to_module.cc 
-+    dwarf_line_to_module.cc 
-+    language.cc 
-+    module.cc 
-+    stabs_reader.cc 
-+    stabs_to_module.cc 
-+    dwarf/bytereader.cc 
-+    dwarf/dwarf2diehandler.cc 
-+    dwarf/dwarf2reader.cc 
++    dwarf_cfi_to_module.cc
++    dwarf_cu_to_module.cc
++    dwarf_line_to_module.cc
++    language.cc
++    module.cc
++    stabs_reader.cc
++    stabs_to_module.cc
++    dwarf/bytereader.cc
++    dwarf/dwarf2diehandler.cc
++    dwarf/dwarf2reader.cc
 +  )
-+  
++
 +  file(GLOB DWARF_HEADERS dwarf/*.h)
 +  install(FILES ${DWARF_HEADERS} DESTINATION include/breakpad/common/dwarf)
 +endif(UNIX)
@@ -238,13 +238,13 @@ index 0000000..56b23c7
 +elseif(UNIX)
 +  list(APPEND common_SRC
 +    linux/crc32.cc
-+    linux/dump_symbols.cc 
-+    linux/elf_symbols_to_module.cc 
-+    linux/elfutils.cc 
-+    linux/file_id.cc 
-+    linux/linux_libc_support.cc 
-+    linux/memory_mapped_file.cc 
-+    linux/safe_readlink.cc 
++    linux/dump_symbols.cc
++    linux/elf_symbols_to_module.cc
++    linux/elfutils.cc
++    linux/file_id.cc
++    linux/linux_libc_support.cc
++    linux/memory_mapped_file.cc
++    linux/safe_readlink.cc
 +  )
 +  file(GLOB LINUX_HEADERS linux/*.h)
 +  install(FILES ${LINUX_HEADERS} DESTINATION include/breakpad/common/linux)
@@ -379,22 +379,19 @@ index 0000000..c317ccf
 +install(TARGETS dump_syms DESTINATION bin)
 diff --git a/src/tools/windows/CMakeLists.txt b/src/tools/windows/CMakeLists.txt
 new file mode 100644
-index 0000000..c5711b0
+index 0000000..e63f814
 --- /dev/null
 +++ b/src/tools/windows/CMakeLists.txt
 @@ -0,0 +1,12 @@
 +set(MSVC_DIA_SDK_DIR "$ENV{VSINSTALLDIR}DIA SDK")
 +find_library(DIAGUIDS NAME diaguids.lib HINTS ${MSVC_DIA_SDK_DIR}/lib)
 +
-+add_executable(dump_syms 
++add_executable(dump_syms
 +	dump_syms/dump_syms.cc
 +	../../common/windows/guid_string.cc
 +	../../common/windows/pdb_source_line_writer.cc
 +	../../common/windows/string_utils.cc)
-+	
++
 +target_link_libraries(dump_syms ${DIAGUIDS} imagehlp.lib breakpad_client)
 +
 +install(TARGETS dump_syms DESTINATION bin)
--- 
-2.7.1.windows.2
-
