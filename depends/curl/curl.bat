@@ -2,6 +2,9 @@ SETLOCAL
 
 set DEPEND_NAME=curl
 set DEPEND_VERSION=7.46.0
+if "%VS%" == "12" (
+  set DEPEND_VERSION=7.47.1
+)
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=http://curl.haxx.se/download/%DEPEND_PACKAGE%.tar.lzma
 

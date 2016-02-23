@@ -4,6 +4,11 @@ set DEPEND_NAME=sqlite3
 set DEPEND_VERSION=3.9.2
 set DEPEND_PACKAGE=sqlite-amalgamation-3090200
 set DEPEND_URL=https://www.sqlite.org/2015/%DEPEND_PACKAGE%.zip
+if "%VS%" == "12" (
+  set DEPEND_VERSION=3.11.0
+  set DEPEND_PACKAGE=sqlite-amalgamation-3110000
+  set DEPEND_URL=https://www.sqlite.org/2016/%DEPEND_PACKAGE%.zip
+)
 
 IF EXIST %DEPEND_PACKAGE% rmdir /S /Q %DEPEND_PACKAGE%
 %WGET% --no-check-certificate "%DEPEND_URL%"
