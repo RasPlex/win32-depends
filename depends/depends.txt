@@ -12,3 +12,4 @@ boost
 tinyxml
 breakpad
 libmicrohttpd
+pcre
