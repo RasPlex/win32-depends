@@ -1,5 +1,6 @@
 zlib
 openssl
+libiconv
 curl
 sqlite3
 libcec

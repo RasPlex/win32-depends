@@ -2,6 +2,7 @@ depends/boost/boost_*/
 depends/breakpad/breakpad-*/
 depends/curl/curl-*/
 depends/libcec/libcec-*/
+depends/libiconv/libiconv-*/
 depends/libmicrohttpd/libmicrohttpd-*/
 depends/libogg/libogg-*/
 depends/libsamplerate/libsamplerate-*/
