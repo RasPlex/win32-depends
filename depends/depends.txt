@@ -10,3 +10,4 @@ shairplay
 boost
 tinyxml
 breakpad
+libmicrohttpd
