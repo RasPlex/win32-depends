@@ -13,3 +13,4 @@ tinyxml
 breakpad
 libmicrohttpd
 pcre
+yajl

@@ -12,6 +12,7 @@ depends/pcre/pcre-*/
 depends/shairplay/shairplay-*/
 depends/sqlite3/sqlite-*/
 depends/tinyxml/tinyxml/
+depends/yajl/yajl-*/
 depends/zlib/zlib-*/
 plex-depends/
 plex-depends.7z
