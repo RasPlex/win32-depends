@@ -1,0 +1,811 @@
+diff -urd mDNSResponder-541/Clients/DNS-SD.VisualStudio/dns-sd.vcxproj mDNSResponder-541.patch/Clients/DNS-SD.VisualStudio/dns-sd.vcxproj
+--- mDNSResponder-541/Clients/DNS-SD.VisualStudio/dns-sd.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/DNS-SD.VisualStudio/dns-sd.vcxproj	2016-03-21 11:09:59.400014700 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -26,18 +26,22 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/ExplorerPlugin/ExplorerPlugin.vcxproj mDNSResponder-541.patch/Clients/ExplorerPlugin/ExplorerPlugin.vcxproj
+--- mDNSResponder-541/Clients/ExplorerPlugin/ExplorerPlugin.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/ExplorerPlugin/ExplorerPlugin.vcxproj	2016-03-21 11:09:58.329794700 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -34,24 +34,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/ExplorerPlugin/ExplorerPluginLocRes.vcxproj mDNSResponder-541.patch/Clients/ExplorerPlugin/ExplorerPluginLocRes.vcxproj
+--- mDNSResponder-541/Clients/ExplorerPlugin/ExplorerPluginLocRes.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/ExplorerPlugin/ExplorerPluginLocRes.vcxproj	2016-03-21 11:09:59.070217300 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -35,24 +35,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/ExplorerPlugin/ExplorerPluginRes.vcxproj mDNSResponder-541.patch/Clients/ExplorerPlugin/ExplorerPluginRes.vcxproj
+--- mDNSResponder-541/Clients/ExplorerPlugin/ExplorerPluginRes.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/ExplorerPlugin/ExplorerPluginRes.vcxproj	2016-03-21 11:09:59.271065700 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -34,24 +34,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/FirefoxExtension/FirefoxExtension.vcxproj mDNSResponder-541.patch/Clients/FirefoxExtension/FirefoxExtension.vcxproj
+--- mDNSResponder-541/Clients/FirefoxExtension/FirefoxExtension.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/FirefoxExtension/FirefoxExtension.vcxproj	2016-03-21 11:10:00.408210100 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -18,11 +18,13 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/mDNSNetMonitor.VisualStudio/mDNSNetMonitor.vcxproj mDNSResponder-541.patch/Clients/mDNSNetMonitor.VisualStudio/mDNSNetMonitor.vcxproj
+--- mDNSResponder-541/Clients/mDNSNetMonitor.VisualStudio/mDNSNetMonitor.vcxproj	2013-02-20 00:46:24.000000000 +0100
++++ mDNSResponder-541.patch/Clients/mDNSNetMonitor.VisualStudio/mDNSNetMonitor.vcxproj	2016-03-21 11:09:59.809991500 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -28,19 +28,23 @@
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>true</WholeProgramOptimization>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/PrinterSetupWizard/PrinterSetupWizard.vcxproj mDNSResponder-541.patch/Clients/PrinterSetupWizard/PrinterSetupWizard.vcxproj
+--- mDNSResponder-541/Clients/PrinterSetupWizard/PrinterSetupWizard.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/PrinterSetupWizard/PrinterSetupWizard.vcxproj	2016-03-21 11:09:58.516839300 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -35,24 +35,32 @@
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/PrinterSetupWizard/PrinterSetupWizardLocRes.vcxproj mDNSResponder-541.patch/Clients/PrinterSetupWizard/PrinterSetupWizardLocRes.vcxproj
+--- mDNSResponder-541/Clients/PrinterSetupWizard/PrinterSetupWizardLocRes.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/PrinterSetupWizard/PrinterSetupWizardLocRes.vcxproj	2016-03-21 11:09:58.699841900 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -35,24 +35,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/Clients/PrinterSetupWizard/PrinterSetupWizardRes.vcxproj mDNSResponder-541.patch/Clients/PrinterSetupWizard/PrinterSetupWizardRes.vcxproj
+--- mDNSResponder-541/Clients/PrinterSetupWizard/PrinterSetupWizardRes.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/Clients/PrinterSetupWizard/PrinterSetupWizardRes.vcxproj	2016-03-21 11:09:58.876087100 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -35,24 +35,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/ControlPanel/ControlPanel.vcxproj mDNSResponder-541.patch/mDNSWindows/ControlPanel/ControlPanel.vcxproj
+--- mDNSResponder-541/mDNSWindows/ControlPanel/ControlPanel.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/ControlPanel/ControlPanel.vcxproj	2016-03-21 11:10:00.319083000 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -28,19 +28,23 @@
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/ControlPanel/ControlPanelLocRes.vcxproj mDNSResponder-541.patch/mDNSWindows/ControlPanel/ControlPanelLocRes.vcxproj
+--- mDNSResponder-541/mDNSWindows/ControlPanel/ControlPanelLocRes.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/ControlPanel/ControlPanelLocRes.vcxproj	2016-03-21 11:09:59.999044000 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -36,24 +36,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/ControlPanel/ControlPanelRes.vcxproj mDNSResponder-541.patch/mDNSWindows/ControlPanel/ControlPanelRes.vcxproj
+--- mDNSResponder-541/mDNSWindows/ControlPanel/ControlPanelRes.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/ControlPanel/ControlPanelRes.vcxproj	2016-03-21 11:10:00.193103600 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -34,24 +34,32 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>Static</UseOfMfc>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
++  </PropertyGroup>
++  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/DLL/dll.rc mDNSResponder-541.patch/mDNSWindows/DLL/dll.rc
+--- mDNSResponder-541/mDNSWindows/DLL/dll.rc	2007-04-27 22:34:31.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/DLL/dll.rc	2016-03-21 11:03:37.887303700 +0100
+@@ -7,7 +7,7 @@
+ //
+ // Generated from the TEXTINCLUDE 2 resource.
+ //
+-#include "afxres.h"
++#include "windows.h"
+ #include "WinVersRes.h"
+ /////////////////////////////////////////////////////////////////////////////
+ #undef APSTUDIO_READONLY_SYMBOLS
+@@ -34,7 +34,7 @@
+ 
+ 2 TEXTINCLUDE 
+ BEGIN
+-    "#include ""afxres.h""\r\n"
++    "#include ""windows.h""\r\n"
+     "#include ""WinVersRes.h""\0"
+ END
+ 
+diff -urd mDNSResponder-541/mDNSWindows/DLL/dnssd.vcxproj mDNSResponder-541.patch/mDNSWindows/DLL/dnssd.vcxproj
+--- mDNSResponder-541/mDNSWindows/DLL/dnssd.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/DLL/dnssd.vcxproj	2016-03-21 12:36:38.889737200 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -28,18 +28,22 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+@@ -91,12 +95,12 @@
+       </ExceptionHandling>
+       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+       <SmallerTypeCheck>true</SmallerTypeCheck>
+-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <PrecompiledHeader>
+       </PrecompiledHeader>
+       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+-      <ProgramDataBaseFileName>$(IntDir)dnssd.dll.pdb</ProgramDataBaseFileName>
++      <ProgramDataBaseFileName>$(IntDir)dnssd.pdb</ProgramDataBaseFileName>
+       <WarningLevel>Level4</WarningLevel>
+       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+       <CallingConvention>StdCall</CallingConvention>
+@@ -112,7 +116,7 @@
+       <OutputFile>$(OutDir)dnssd.dll</OutputFile>
+       <ModuleDefinitionFile>dnssd.def</ModuleDefinitionFile>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+-      <ProgramDatabaseFile>$(OutDir)dnssd.dll.pdb</ProgramDatabaseFile>
++      <ProgramDatabaseFile>$(OutDir)dnssd.pdb</ProgramDatabaseFile>
+       <SubSystem>Windows</SubSystem>
+       <BaseAddress>0x16000000</BaseAddress>
+       <ImportLibrary>$(OutDir)dnssd.lib</ImportLibrary>
+@@ -133,12 +137,12 @@
+       </ExceptionHandling>
+       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+       <SmallerTypeCheck>true</SmallerTypeCheck>
+-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+       <BufferSecurityCheck>true</BufferSecurityCheck>
+       <PrecompiledHeader>
+       </PrecompiledHeader>
+       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+-      <ProgramDataBaseFileName>$(IntDir)dnssd.dll.pdb</ProgramDataBaseFileName>
++      <ProgramDataBaseFileName>$(IntDir)dnssd.pdb</ProgramDataBaseFileName>
+       <WarningLevel>Level4</WarningLevel>
+       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+       <CallingConvention>StdCall</CallingConvention>
+@@ -154,7 +158,7 @@
+       <OutputFile>$(OutDir)dnssd.dll</OutputFile>
+       <ModuleDefinitionFile>dnssd.def</ModuleDefinitionFile>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+-      <ProgramDatabaseFile>$(OutDir)dnssd.dll.pdb</ProgramDatabaseFile>
++      <ProgramDatabaseFile>$(OutDir)dnssd.pdb</ProgramDatabaseFile>
+       <SubSystem>Windows</SubSystem>
+       <BaseAddress>0x16000000</BaseAddress>
+       <ImportLibrary>$(OutDir)dnssd.lib</ImportLibrary>
+@@ -165,11 +169,11 @@
+     <ClCompile>
+       <AdditionalIncludeDirectories>../../mDNSCore;../../mDNSShared;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MDNS_DEBUGMSGS=0;WIN32_LEAN_AND_MEAN;USE_TCP_LOOPBACK;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;NOT_HAVE_SA_LEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+       <PrecompiledHeader>
+       </PrecompiledHeader>
+       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+-      <ProgramDataBaseFileName>$(IntDir)dnssd.dll.pdb</ProgramDataBaseFileName>
++      <ProgramDataBaseFileName>$(IntDir)dnssd.pdb</ProgramDataBaseFileName>
+       <WarningLevel>Level4</WarningLevel>
+       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+       <CallingConvention>StdCall</CallingConvention>
+@@ -185,7 +189,7 @@
+       <OutputFile>$(OutDir)dnssd.dll</OutputFile>
+       <ModuleDefinitionFile>dnssd.def</ModuleDefinitionFile>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+-      <ProgramDatabaseFile>$(OutDir)dnssd.dll.pdb</ProgramDatabaseFile>
++      <ProgramDatabaseFile>$(OutDir)dnssd.pdb</ProgramDatabaseFile>
+       <SubSystem>Windows</SubSystem>
+       <OptimizeReferences>true</OptimizeReferences>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+@@ -203,7 +207,7 @@
+ if not exist "$(DSTROOT)\AppleInternal\bin"                                                           mkdir "$(DSTROOT)\AppleInternal\bin"
+ if not exist "$(DSTROOT)\AppleInternal\bin\$(Platform)"                           mkdir "$(DSTROOT)\AppleInternal\bin\$(Platform)"
+ xcopy /I/Y "$(TargetPath)"                                                                                           "$(DSTROOT)\WINDOWS\system32\$(Platform)"
+-xcopy /I/Y "$(OutDir)dnssd.dll.pdb"                                                                          "$(DSTROOT)\AppleInternal\bin\$(Platform)"
++xcopy /I/Y "$(OutDir)dnssd.pdb"                                                                          "$(DSTROOT)\AppleInternal\bin\$(Platform)"
+ xcopy /I/Y "$(ProjectDir)..\..\mDNSShared\dns_sd.h"                                             "$(DSTROOT)\Program Files\Bonjour SDK\include"
+ :END
+ </Command>
+@@ -216,11 +220,11 @@
+     <ClCompile>
+       <AdditionalIncludeDirectories>../../mDNSCore;../../mDNSShared;../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MDNS_DEBUGMSGS=0;WIN32_LEAN_AND_MEAN;USE_TCP_LOOPBACK;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;NOT_HAVE_SA_LEN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
++      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+       <PrecompiledHeader>
+       </PrecompiledHeader>
+       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+-      <ProgramDataBaseFileName>$(IntDir)dnssd.dll.pdb</ProgramDataBaseFileName>
++      <ProgramDataBaseFileName>$(IntDir)dnssd.pdb</ProgramDataBaseFileName>
+       <WarningLevel>Level4</WarningLevel>
+       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+       <CallingConvention>StdCall</CallingConvention>
+@@ -236,7 +240,7 @@
+       <OutputFile>$(OutDir)dnssd.dll</OutputFile>
+       <ModuleDefinitionFile>dnssd.def</ModuleDefinitionFile>
+       <GenerateDebugInformation>true</GenerateDebugInformation>
+-      <ProgramDatabaseFile>$(OutDir)dnssd.dll.pdb</ProgramDatabaseFile>
++      <ProgramDatabaseFile>$(OutDir)dnssd.pdb</ProgramDatabaseFile>
+       <SubSystem>Windows</SubSystem>
+       <OptimizeReferences>true</OptimizeReferences>
+       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+@@ -254,7 +258,7 @@
+ if not exist "$(DSTROOT)\AppleInternal\bin"                                                           mkdir "$(DSTROOT)\AppleInternal\bin"
+ if not exist "$(DSTROOT)\AppleInternal\bin\$(Platform)"                           mkdir "$(DSTROOT)\AppleInternal\bin\$(Platform)"
+ xcopy /I/Y "$(TargetPath)"                                                                                           "$(DSTROOT)\WINDOWS\system32\$(Platform)"
+-xcopy /I/Y "$(OutDir)dnssd.dll.pdb"                                                                         "$(DSTROOT)\AppleInternal\bin\$(Platform)"
++xcopy /I/Y "$(OutDir)dnssd.pdb"                                                                         "$(DSTROOT)\AppleInternal\bin\$(Platform)"
+ :END
+ </Command>
+     </PostBuildEvent>
+diff -urd mDNSResponder-541/mDNSWindows/DLLStub/DLLStub.vcxproj mDNSResponder-541.patch/mDNSWindows/DLLStub/DLLStub.vcxproj
+--- mDNSResponder-541/mDNSWindows/DLLStub/DLLStub.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/DLLStub/DLLStub.vcxproj	2016-03-21 11:09:59.522328100 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -29,24 +29,28 @@
+     <UseOfAtl>false</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>false</WholeProgramOptimization>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseOfAtl>false</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>false</WholeProgramOptimization>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseOfAtl>false</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>false</WholeProgramOptimization>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>StaticLibrary</ConfigurationType>
+     <UseOfAtl>false</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
+     <WholeProgramOptimization>false</WholeProgramOptimization>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/DLLX/DLLX.vcxproj mDNSResponder-541.patch/mDNSWindows/DLLX/DLLX.vcxproj
+--- mDNSResponder-541/mDNSWindows/DLLX/DLLX.vcxproj	2013-02-20 00:46:24.000000000 +0100
++++ mDNSResponder-541.patch/mDNSWindows/DLLX/DLLX.vcxproj	2016-03-21 11:09:59.658262100 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -28,23 +28,27 @@
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfAtl>Static</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <UseOfAtl>Static</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfAtl>Static</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <UseOfMfc>false</UseOfMfc>
+     <UseOfAtl>Static</UseOfAtl>
+     <CharacterSet>Unicode</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/mdnsNSP/mdnsNSP.vcxproj mDNSResponder-541.patch/mDNSWindows/mdnsNSP/mdnsNSP.vcxproj
+--- mDNSResponder-541/mDNSWindows/mdnsNSP/mdnsNSP.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/mdnsNSP/mdnsNSP.vcxproj	2016-03-21 11:09:58.124825400 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -26,18 +26,22 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>DynamicLibrary</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/NSPTool/NSPTool.vcxproj mDNSResponder-541.patch/mDNSWindows/NSPTool/NSPTool.vcxproj
+--- mDNSResponder-541/mDNSWindows/NSPTool/NSPTool.vcxproj	2011-07-19 01:30:01.000000000 +0200
++++ mDNSResponder-541.patch/mDNSWindows/NSPTool/NSPTool.vcxproj	2016-03-21 11:09:58.000920300 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -26,18 +26,22 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">
+diff -urd mDNSResponder-541/mDNSWindows/SystemService/Service.vcxproj mDNSResponder-541.patch/mDNSWindows/SystemService/Service.vcxproj
+--- mDNSResponder-541/mDNSWindows/SystemService/Service.vcxproj	2013-02-20 00:46:24.000000000 +0100
++++ mDNSResponder-541.patch/mDNSWindows/SystemService/Service.vcxproj	2016-03-21 11:09:57.722906700 +0100
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <ItemGroup Label="ProjectConfigurations">
+     <ProjectConfiguration Include="Debug|Win32">
+       <Configuration>Debug</Configuration>
+@@ -28,18 +28,22 @@
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+     <ConfigurationType>Application</ConfigurationType>
+     <CharacterSet>MultiByte</CharacterSet>
++    <PlatformToolset>v120</PlatformToolset>
+   </PropertyGroup>
+   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+   <ImportGroup Label="ExtensionSettings">

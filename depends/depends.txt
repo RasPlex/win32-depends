@@ -14,3 +14,4 @@ breakpad
 libmicrohttpd
 pcre
 yajl
+dnssd

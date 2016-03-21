@@ -1,5 +1,6 @@
 depends/boost/boost_*/
 depends/breakpad/breakpad-*/
+depends/dnssd/mDNSResponder-*/
 depends/curl/curl-*/
 depends/libcec/libcec-*/
 depends/libiconv/libiconv-*/

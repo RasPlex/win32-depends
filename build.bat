@@ -11,7 +11,7 @@ mkdir plex-depends\include
 mkdir plex-depends\lib
 
 if "%WindowsSdkDir%" == "" (
-  call "%VS110COMNTOOLS%vsvars32.bat"
+  call "%VS110COMNTOOLS%vsvars32.bat" || exit /b 1
 )
 
 if "%VisualStudioVersion%" == "" (
@@ -25,6 +25,9 @@ if "%VS%" == "11" (
 if "%VS%" == "12" (
   set VSYEAR=2013
 )
+if "%VS%" == "14" (
+  set VSYEAR=2015
+)
 
 set WGET=%CD%\tools\wget
 set PATCH=%CD%\tools\patch
@@ -33,7 +36,7 @@ set ZIP=%CD%\tools\7z\7za
 FOR /F "eol=; tokens=1" %%f IN (depends\depends.txt) DO (
   echo Building %%f
   cd /D %~dp0\depends\%%f
-  call %%f.bat
+  call %%f.bat || exit /b 1
   echo.
 )
 
