@@ -1,9 +1,5 @@
 SETLOCAL
 
-if "%VS%" == "12" (
-  exit /b 0
-)
-
 set DEPEND_NAME=libsamplerate
 set DEPEND_VERSION=0.1.8
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
