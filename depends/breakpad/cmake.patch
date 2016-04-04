@@ -105,7 +105,7 @@ new file mode 100644
 index 0000000..229a7d8
 --- /dev/null
 +++ b/src/client/CMakeLists.txt
-@@ -0,0 +1,83 @@
+@@ -0,0 +1,81 @@
 +
 +set(COMMON_SRC minidump_file_writer.cc)
 +
@@ -137,8 +137,6 @@ index 0000000..229a7d8
 +    windows/crash_generation/minidump_generator.cc
 +    windows/handler/exception_handler.cc
 +  )
-+  set_target_properties(breakpad_client PROPERTIES COMPILE_PDB_NAME "breakpad_client")
-+  install(FILES "${PROJECT_BINARY_DIR}/src/client/breakpad_client.pdb" DESTINATION lib)
 +
 +  file(GLOB HEADERS windows/handler/*h)
 +  install(FILES ${HEADERS} DESTINATION include/breakpad/client/windows/handler)

@@ -17,7 +17,7 @@ cd %DEPEND_PACKAGE%
 mkdir build
 cd build
 
-cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=%BUILD_PATH% ..
+cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=%BUILD_PATH% -DCMAKE_C_FLAGS_RELWITHDEBINFO="/MD /Z7 /O2 /Ob1 /D NDEBUG" ..
 nmake install
 
 ping 127.0.0.1 -n 2 -w 1000 > nul
