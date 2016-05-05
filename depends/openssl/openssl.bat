@@ -1,7 +1,7 @@
 SETLOCAL
 
 set DEPEND_NAME=openssl
-set DEPEND_VERSION=1.0.2g
+set DEPEND_VERSION=1.0.2h
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=https://www.openssl.org/source/%DEPEND_PACKAGE%.tar.gz
 
