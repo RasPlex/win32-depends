@@ -5,7 +5,7 @@ if "%VS%" == "11" (
 )
 
 set DEPEND_NAME=libmicrohttpd
-set DEPEND_VERSION=0.9.49
+set DEPEND_VERSION=0.9.48
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=http://ftp.gnu.org/gnu/libmicrohttpd/%DEPEND_PACKAGE%.tar.gz
 
