@@ -3,7 +3,7 @@ SETLOCAL
 set DEPEND_NAME=curl
 set DEPEND_VERSION=7.46.0
 if "%VS%" == "12" (
-  set DEPEND_VERSION=7.48.0
+  set DEPEND_VERSION=7.50.3
 )
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=http://curl.haxx.se/download/%DEPEND_PACKAGE%.tar.lzma
@@ -16,10 +16,10 @@ del /F /Q %DEPEND_PACKAGE%.tar.lzma
 del /F /Q %DEPEND_PACKAGE%.tar
 cd %DEPEND_PACKAGE%
 
-rem TODO patch MakefileBuild.vc adding /DUSE_SYNC_DNS
-rem %PATHC% -p1 < ..\use-sync-dns.patch
+if "%VS%" == "12" (
+  %PATCH% -p1 < ../vc120-use-sync-dns.patch
+)
 
-copy /V /Y ..\MakefileBuild.vc winbuild\
 cd winbuild
 nmake /f Makefile.vc mode=dll VC=%VS% WITH_DEVEL=%BUILD_PATH% WITH_SSL=dll WITH_ZLIB=dll ENABLE_SSPI=no GEN_PDB=yes DEBUG=no MACHINE=x86
 
