@@ -5,7 +5,7 @@ if "%VS%" == "11" (
 )
 
 set DEPEND_NAME=libmicrohttpd
-set DEPEND_VERSION=0.9.48
+set DEPEND_VERSION=0.9.51
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=http://ftp.gnu.org/gnu/libmicrohttpd/%DEPEND_PACKAGE%.tar.gz
 
@@ -16,6 +16,8 @@ del /F /Q %DEPEND_PACKAGE%.tar.gz
 %ZIP% x -y %DEPEND_PACKAGE%.tar
 del /F /Q %DEPEND_PACKAGE%.tar
 cd %DEPEND_PACKAGE%
+
+%PATCH% -p1 < ../vc120-config.patch
 
 msbuild w32\VS2013\libmicrohttpd.sln /p:Configuration=Release-dll;Platform=Win32 /t:libmicrohttpd
 
