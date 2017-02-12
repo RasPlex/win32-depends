@@ -5,7 +5,7 @@ if "%VS%" == "11" (
 )
 
 set DEPEND_NAME=pcre
-set DEPEND_VERSION=8.38
+set DEPEND_VERSION=8.40
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/%DEPEND_PACKAGE%.zip
 
