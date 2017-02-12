@@ -1,0 +1,14 @@
+--- pcre-8.40/CMakeLists.txt	2017-02-12 23:57:41.500343000 +0100
++++ pcre-8.40-patch/CMakeLists.txt	2017-02-12 23:57:48.952639800 +0100
+@@ -191,9 +191,8 @@
+ ENDIF(MINGW)
+ 
+ IF(MSVC)
+-  OPTION(PCRE_STATIC_RUNTIME OFF CACHE BOOL
+-	"ON=Compile against the static runtime (/MT)."
+-	OFF)
++  SET(PCRE_STATIC_RUNTIME OFF CACHE BOOL
++	"ON=Compile against the static runtime (/MT).")
+   OPTION(INSTALL_MSVC_PDB
+          "ON=Install .pdb files built by MSVC, if generated"
+          OFF)

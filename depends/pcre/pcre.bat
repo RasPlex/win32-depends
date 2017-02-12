@@ -14,6 +14,9 @@ IF EXIST %DEPEND_PACKAGE% rmdir /S /Q %DEPEND_PACKAGE%
 %ZIP% x -y %DEPEND_PACKAGE%.zip
 del /F /Q %DEPEND_PACKAGE%.zip
 cd %DEPEND_PACKAGE%
+
+%PATCH% -p1 < ../vc120.patch
+
 mkdir build
 cd build
 
