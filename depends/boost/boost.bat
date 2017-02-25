@@ -11,6 +11,8 @@ IF EXIST %DEPEND_PACKAGE% rmdir /S /Q %DEPEND_PACKAGE%
 del /F /Q %DEPEND_PACKAGE%.7z
 cd %DEPEND_PACKAGE%
 
+%PATCH% -p1 < ../ssl.patch
+
 call bootstrap.bat
 b2 toolset=msvc-%VS%.0 variant=debug link=static --with-thread --with-date_time --with-regex --with-random
 b2 toolset=msvc-%VS%.0 variant=release link=static --with-thread --with-date_time --with-regex --with-random

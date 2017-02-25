@@ -1,0 +1,12 @@
+diff -Naur boost_1_60_0/boost/asio/ssl/context.hpp boost_1_60_0.patch/boost/asio/ssl/context.hpp
+--- boost_1_60_0/boost/asio/ssl/context.hpp	2015-12-14 03:23:11.000000000 +0100
++++ boost_1_60_0.patch/boost/asio/ssl/context.hpp	2017-02-25 23:30:01.121806100 +0100
+@@ -770,7 +770,7 @@
+   native_handle_type handle_;
+ 
+   // Ensure openssl is initialised.
+-  boost::asio::ssl::detail::openssl_init<> init_;
++  //boost::asio::ssl::detail::openssl_init<> init_;
+ };
+ 
+ #endif // defined(BOOST_ASIO_ENABLE_OLD_SSL)
