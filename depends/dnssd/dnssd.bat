@@ -7,7 +7,7 @@ if "%VS%" == "11" (
 set DEPEND_NAME=dnssd
 set DEPEND_VERSION=541
 set DEPEND_PACKAGE=mDNSResponder-%DEPEND_VERSION%
-set DEPEND_URL=http://www.opensource.apple.com/tarballs/mDNSResponder/mDNSResponder-%DEPEND_VERSION%.tar.gz
+set DEPEND_URL=http://sources.openpht.tv/devel/mDNSResponder-%DEPEND_VERSION%.tar.gz
 
 IF EXIST %DEPEND_PACKAGE% rmdir /S /Q %DEPEND_PACKAGE%
 %WGET% --no-check-certificate "%DEPEND_URL%"
