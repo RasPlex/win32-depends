@@ -1,14 +1,14 @@
 SETLOCAL
 
 set DEPEND_NAME=zlib
-set DEPEND_VERSION=1.2.11
+set DEPEND_VERSION=1.2.8
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
-set DEPEND_URL=http://zlib.net/%DEPEND_PACKAGE%.tar.xz
+set DEPEND_URL=http://zlib.net/fossils/%DEPEND_PACKAGE%.tar.gz
 
 IF EXIST %DEPEND_PACKAGE% rmdir /S /Q %DEPEND_PACKAGE%
 %WGET% --no-check-certificate "%DEPEND_URL%"
-%ZIP% x -y %DEPEND_PACKAGE%.tar.xz
-del /F /Q %DEPEND_PACKAGE%.tar.xz
+%ZIP% x -y %DEPEND_PACKAGE%.tar.gz
+del /F /Q %DEPEND_PACKAGE%.tar.gz
 %ZIP% x -y %DEPEND_PACKAGE%.tar
 del /F /Q %DEPEND_PACKAGE%.tar
 cd %DEPEND_PACKAGE%
