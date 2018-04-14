@@ -1,7 +1,7 @@
 SETLOCAL
 
 set DEPEND_NAME=openssl
-set DEPEND_VERSION=1.0.2k
+set DEPEND_VERSION=1.0.2o
 set DEPEND_PACKAGE=%DEPEND_NAME%-%DEPEND_VERSION%
 set DEPEND_URL=https://www.openssl.org/source/%DEPEND_PACKAGE%.tar.gz
 
@@ -13,7 +13,7 @@ del /F /Q %DEPEND_PACKAGE%.tar.gz
 del /F /Q %DEPEND_PACKAGE%.tar
 cd %DEPEND_PACKAGE%
 
-perl Configure VC-WIN32 no-asm no-comp no-dso --prefix=%BUILD_PATH%
+perl Configure VC-WIN32 no-asm no-comp --prefix=%BUILD_PATH%
 call ms\do_ms
 nmake -f ms\ntdll.mak
 
