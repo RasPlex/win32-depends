@@ -5,8 +5,8 @@ set DEPEND_VERSION=3.9.2
 set DEPEND_PACKAGE=sqlite-amalgamation-3090200
 set DEPEND_URL=https://www.sqlite.org/2015/%DEPEND_PACKAGE%.zip
 if "%VS%" == "12" (
-  set DEPEND_VERSION=3.12.2
-  set DEPEND_PACKAGE=sqlite-amalgamation-3120200
+  set DEPEND_VERSION=3.15.2
+  set DEPEND_PACKAGE=sqlite-amalgamation-3150200
   set DEPEND_URL=https://www.sqlite.org/2016/!DEPEND_PACKAGE!.zip
 )
 
